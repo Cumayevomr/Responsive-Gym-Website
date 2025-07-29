@@ -160,7 +160,34 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header{
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: background .3s;
+}
 
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle{
+  color: var(--title-color);
+  display: flex;
+}
+
+.nav__logo{
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-bold);
+}
 
 /* Show menu */
 
