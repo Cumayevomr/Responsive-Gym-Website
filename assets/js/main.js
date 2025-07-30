@@ -70,7 +70,23 @@ const calculateBmi = (e) =>{
             calculateMessage.textContent = ''
         }, 3000)
     } else{
-        
+
+        const cm = calculateCm.value / 100,
+              kg = calculateKg.value,
+              bmi = Math.round(kg / (cm * cm))
+
+
+        if(bmi < 18.5){
+
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
+        } else if(bmi < 25){
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😉`
+        } else{
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are overweight 😔`
+        }
     }
 }
 
