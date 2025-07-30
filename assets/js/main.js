@@ -47,8 +47,33 @@ window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
-
 /*=============== CALCULATE JS ===============*/
+const calculateForm = document.getElementById('calculate-form'),
+      calculateCm = document.getElementById('calculate-cm'),
+      calculateKg = document.getElementById('calculate-kg'),
+      calculateMessage = document.getElementById('calculate-message')
 
+const calculateBmi = (e) =>{
+    e.preventDefault()
+
+
+    if(calculateCm.vaue === '' || calculateKg.value === ''){
+
+        calculateMessage.classList.remove('color-green')
+        calculateMessage.classList.add('color-red')
+
+
+        calculateMessage.textContent = 'Fill in the Height and Weight 😶‍🌫️'
+
+
+        setTimeout(() =>{
+            calculateMessage.textContent = ''
+        }, 3000)
+    } else{
+        
+    }
+}
+
+calculateForm.addEventListener('submit', calculateBmi)
 
 /*=============== EMAIL JS ===============*/
