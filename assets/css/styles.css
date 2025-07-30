@@ -151,14 +151,6 @@ img {
   overflow: hidden; /* For animation ScrollReveal */
 }
 
-.color-red {
-  color: hsl(0, 80%, 64%);
-}
-
-.color-green {
-  color: var(--first-color);
-}
-
 /*=============== HEADER & NAV ===============*/
 .header{
   width: 100%;
@@ -238,6 +230,11 @@ img {
   cursor: pointer;
 }
 
+.nav .nav__button{
+  background-color: var(--title-color);
+  border: none;
+}
+
 /* Show menu */
 .show-menu{
   right: 0;
@@ -310,14 +307,37 @@ img {
   margin: 0 auto;
 }
 
-/* Active link */
-
-
-/*=============== HOME ===============*/
-
-
 /*=============== BUTTON ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 18px 32px;
+  border: 2px solid var(--text-color-light);
+  color: var(--title-color-black);
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  transition: background .3s;
+}
 
+.button:hover{
+  background-color: var(--first-color-alt);
+}
+
+.button i{
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button__flex{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.button__flex:hover i{
+  transform: translateX(.25rem);
+}
 
 /*=============== LOGOS ===============*/
 
