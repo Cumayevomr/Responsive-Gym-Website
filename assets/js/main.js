@@ -70,6 +70,7 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
+
 /*=============== CALCULATE JS ===============*/
 const calculateForm = document.getElementById('calculate-form'),
       calculateCm = document.getElementById('calculate-cm'),

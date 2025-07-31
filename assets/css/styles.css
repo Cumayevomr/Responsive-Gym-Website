@@ -808,7 +808,7 @@ img {
 }
 
 /*=============== SCROLL UP ===============*/
-.scrollup{
+.scrollUp{
   position: fixed;
   right: 1rem;
   bottom: -30%;
@@ -821,7 +821,7 @@ img {
   transition: .3s;
 }
 
-.scrollup:hover{
+.scrollUp:hover{
   transform: translateY(-.25rem);
 }
 
@@ -1095,5 +1095,26 @@ img {
     margin-bottom: 3.5rem;
   }
 
-  
+  .pricing__container{
+    padding-top: 3rem;
+    grid-template-columns: repeat(3, 320px);
+  }
+  .pricing__card{
+    padding: 2rem 3.5rem;
+    row-gap: 2.5rem;
+  }
+
+  .calculate__description{
+    width: 415px;
+  }
+  .calculate__form{
+    width: 505px;
+  }
+  .calculate__img{
+    width: 300px;
+  }
+
+  .scrollup{
+    bottom: 3rem;
+  }
 }
