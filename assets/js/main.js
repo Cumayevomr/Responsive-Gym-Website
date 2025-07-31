@@ -38,9 +38,26 @@ const scrollHeader = () =>{
 }
 window.addEventListener('scroll', scrollHeader)
 
-
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
 
+const scrollActive = () =>{
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id'),
+              sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            sectionClass.classList.add('active-link')
+        } else{
+            sectionClass.classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
@@ -115,7 +132,9 @@ const sendEmail = (e) =>{
         contactMessage.classList.remove('color-green')
         contactMessage.classList.add('color-red')
 
+
         contactMessage.textContent = 'Your must enter your email ☝️'
+
 
         setTimeout(() => {
             contactMessage.textContent = ''
@@ -127,7 +146,18 @@ const sendEmail = (e) =>{
 
                 contactMessage.classList.add('color-green')
                 contactMessage.textContent = 'You registered successfully 💪'
+
+
+                setTimeout(() => {
+                    contactMessage.textContent = ''
+                }, 3000);
+            }, (error) =>{
+
+                alert('OOPS! SOMETHING HAS FAILED...', error)
             })
+
+
+            contactUser.value = ''
     }
 }
 
