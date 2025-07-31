@@ -102,3 +102,33 @@ const calculateBmi = (e) =>{
 calculateForm.addEventListener('submit', calculateBmi)
 
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+
+
+    if(contactUser.value === ''){
+
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Your must enter your email ☝️'
+
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 3000);
+    } else{
+
+        emailjs.sendForm('service_se840b8','template_4fw9xnd','#contact-form','6UM0-hspziiSwDxG3')
+            .then(() =>{
+
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'You registered successfully 💪'
+            })
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)
